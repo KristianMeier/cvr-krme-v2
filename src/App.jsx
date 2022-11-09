@@ -8,6 +8,7 @@ import { Information } from './Pages/Information/Information'
 import { LandingPage } from './Pages/LandingPage/LandingPage'
 import { NoAccess } from './Pages/NoAccess/NoAccess'
 import { ProtectedRoute } from './Components/Layout/ProtectedRoute/ProtectedRoute'
+import { SignInPage } from './Pages/SIgnInPage/SgnInPage'
 
 export const App = () => {
   return (
@@ -17,6 +18,7 @@ export const App = () => {
           <Route index element={<LandingPage />} />
           <Route path='virkopedia' element={<Virkopedia />} />
           <Route path='information' element={<Information />} />
+          <Route path='signinpage' element={<SignInPage />} />
           <Route path=':routeParams' element={<NoRoute />} />
           <Route path='company/:arrayIndex' element={<Company />} />
           <Route

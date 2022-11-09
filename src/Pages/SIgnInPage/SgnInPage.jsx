@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react'
 import { getLocalStorageArray } from '../../Utilities/getLocalStorageArray'
-import { AddEmployeesInput } from './AddEmployeesInput'
-import { AddEmployeesOutput } from './AddEmployeesOutput'
 
-const localStorageKey = 'employees'
+const localStorageKey = 'usenamePassword'
 
-export const AddEmployees = () => {
+export const SignInPage = () => {
   const [name, setName] = useState('')
   const [age, setAge] = useState('')
   const [employees, setEmployees] = useState(
@@ -45,16 +43,36 @@ export const AddEmployees = () => {
 
   return (
     <div className='add-employess'>
-      <h1>Grant employees access to Virk.dk</h1>
+      <h1>Login</h1>
       <div className='container'>
-        <AddEmployeesInput
-          name={name}
-          age={age}
-          onChangeName={onChangeName}
-          onChangeAge={onChangeAge}
-          handleSubmit={handleSubmit}
-        />
-        <AddEmployeesOutput removeItem={removeItem} list={employees} />
+        <article className='add-employees-input'>
+          <form className='form-container'>
+            <div className='form-control'>
+              <input
+                className='input'
+                type='text'
+                id='firstName'
+                name='firstName'
+                placeholder='Insert name...'
+                value={name}
+                onChange={onChangeName}
+              />
+              <input
+                className='input'
+                type='number'
+                id='age'
+                name='age'
+                placeholder='Insert age...'
+                value={age}
+                onChange={onChangeAge}
+              />
+              <button type='submit' onClick={handleSubmit}>
+                Add Employee
+              </button>
+            </div>
+          </form>
+        </article>
+          
       </div>
     </div>
   )

@@ -29,6 +29,7 @@ export const NavbarLinks = ({ linksContainerRef, linksRef }) => {
             Sign In
           </button>
         )}
+        <Link to='/signinpage'>Sign In TEMP</Link>
       </ul>
     </div>
   )
