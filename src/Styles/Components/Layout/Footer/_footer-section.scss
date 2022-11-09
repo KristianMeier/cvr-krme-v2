@@ -1,0 +1,25 @@
+.footer-section {
+  @include flex-col-gap-1rem;
+  align-items: center;
+  justify-content: center;
+
+  @include breakpoint-sm-up {
+    flex: 0 0 calc(50% - 2rem);
+  }
+
+  @include breakpoint-xmd-up {
+    flex: 0 0 calc(25% - 2rem);
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .odd-link:nth-child(odd) {
+    font-weight: $font-weight-bold;
+  }
+
+  .first-link:first-child {
+    font-weight: $font-weight-bold;
+  }
+}

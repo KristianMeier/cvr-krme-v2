@@ -1,0 +1,14 @@
+.trialbal-article {
+  @include flex-col-gap-1rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  @include breakpoint-xmd-up {
+    flex-direction: row;
+  }
+
+  .article {
+    @include breakpoint-xmd-up {
+      flex: 0 0 calc(33.33% - 1rem);
+    }
+  }
+}

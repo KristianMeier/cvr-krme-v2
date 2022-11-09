@@ -1,0 +1,32 @@
+.links-container {
+  height: 0;
+  overflow: hidden;
+  transition: $transition;
+
+  @include breakpoint-md-up {
+    height: auto !important;
+  }
+
+  .links a,
+  button {
+    @include borderless-button;
+    text-decoration: none;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    display: block;
+    padding: 0.5rem 1rem;
+  }
+
+  .links {
+    @include breakpoint-md-up {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .links a {
+    @include breakpoint-md-up {
+      padding: 0;
+    }
+  }
+}

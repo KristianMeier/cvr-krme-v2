@@ -1,0 +1,24 @@
+.output {
+  width: 100%;
+
+  .remove-btn {
+    @include borderless-button;
+  }
+
+  td:first-child,
+  th:first-child {
+    text-align: left;
+    padding-left: 1rem;
+  }
+
+  tr {
+    border: $border;
+  }
+
+  table {
+    width: 100%;
+    border: $border;
+    text-align: center;
+    line-height: 1.75rem;
+  }
+}

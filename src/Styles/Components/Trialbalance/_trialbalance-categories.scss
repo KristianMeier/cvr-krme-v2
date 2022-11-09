@@ -1,0 +1,11 @@
+.trialbal-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+
+  button {
+    @include borderless-button;
+    text-decoration: underline;
+    font-size: 1.3rem;
+  }
+}

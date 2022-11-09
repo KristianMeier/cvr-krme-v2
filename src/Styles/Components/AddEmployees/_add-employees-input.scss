@@ -1,0 +1,33 @@
+.add-employees-input {
+  flex: 0 0 40%;
+  align-self: flex-end;
+  width: 100%;
+  border: $border;
+
+  .form-container {
+    @include flex-col-gap-1rem;
+    padding: 1rem;
+  }
+
+  .form-control {
+    @include flex-col-gap-1rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  button {
+    @include button;
+    display: inline-block;
+    margin-top: 0;
+    width: 100%;
+    padding: 0.25rem 0.75rem;
+    border: $border;
+  }
+
+  .input {
+    width: 100%;
+    border: $border;
+    padding: 0.5rem;
+  }
+}

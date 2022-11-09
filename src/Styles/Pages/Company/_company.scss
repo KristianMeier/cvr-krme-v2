@@ -1,0 +1,7 @@
+.company-page {
+  @include component-container;
+
+  .all-companies-info {
+    width: 100%;
+  }
+}

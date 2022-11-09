@@ -1,0 +1,20 @@
+.virkopedia {
+  @include component-container;
+
+  .virkopedia-container {
+    @include flex-col-gap-1rem;
+    @include breakpoint-md-up {
+      flex-direction: row;
+    }
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    @include breakpoint-md-up {
+      flex: 0 0 200px;
+      flex-direction: column;
+    }
+  }
+}

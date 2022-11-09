@@ -1,0 +1,13 @@
+.footer {
+  @include flex-col-gap-1rem;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 3rem;
+  box-shadow: var(--border-shadow);
+  padding: 2rem;
+
+  @include breakpoint-sm-up {
+    flex-direction: row;
+  }
+}

@@ -1,0 +1,7 @@
+.my-account {
+  @include component-container;
+
+  button {
+    @include large-button;
+  }
+}

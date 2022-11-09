@@ -1,0 +1,8 @@
+.trialbalance {
+  @include component-container;
+  min-height: 275px;
+
+  p {
+    margin-top: 1rem;
+  }
+}

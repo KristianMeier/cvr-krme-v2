@@ -1,0 +1,9 @@
+.placeholder-wrapper {
+  @include center-component;
+  @include flex-col-gap-1rem;
+
+  @include breakpoint-md-up {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
