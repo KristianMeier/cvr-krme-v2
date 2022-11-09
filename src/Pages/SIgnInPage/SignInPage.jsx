@@ -7,7 +7,7 @@ export const NoAccess = () => {
   const navigate = useNavigate()
   return (
     <Account
-      title='You need to sign in to acces your account'
+      title='Sign In Beaneath'
       onClick={() => {
         logIn()
         navigate('/myaccount')

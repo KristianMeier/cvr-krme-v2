@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from 'react-router-dom'
-import { Account } from '../../Components/Account/Account'
+import { Account } from '../../Components/Other/Account'
 
 export const NoRoute = () => {
   const { routeParams } = useParams()

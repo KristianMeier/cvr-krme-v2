@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router'
-import { Account } from '../../Components/Account/Account'
 import { AddEmployees } from '../../Components/AddEmployess/AddEmployees'
+import { Account } from '../../Components/Other/Account'
 
 import { useGlobalContext } from '../../Context/Context'
 
