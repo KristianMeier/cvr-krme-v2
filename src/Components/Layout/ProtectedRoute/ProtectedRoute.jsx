@@ -3,8 +3,6 @@ import { useGlobalContext } from '../../../Context/Context'
 
 export const ProtectedRoute = ({ children }) => {
   const { loginStatus } = useGlobalContext()
-  if (loginStatus === 'logged out') {
-    return <Navigate to='/noaccess' />
-  }
+  if (!loginStatus) return <Navigate to='/noaccess' />
   return children
 }

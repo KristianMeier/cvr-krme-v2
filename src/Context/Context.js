@@ -14,7 +14,7 @@ const AppContext = createContext()
 const AppProvider = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  const localStorageKey = 'login'
+  const localStorageKey = 'userNamePassword'
   const [loginStatus, setLoginStatus] = useState(
     getLocalStorageLogin(localStorageKey)
   )
@@ -27,6 +27,11 @@ const AppProvider = ({ children }) => {
   const logOut = () => {
     setLoginStatus('logged out')
     localStorage.setItem(localStorageKey, loginStatus)
+  }
+
+  const logOutNew = () => {
+    setLoginStatus(false)
+    localStorage.removeItem(localStorageKey)
   }
 
   const openModal = () => {
@@ -45,6 +50,7 @@ const AppProvider = ({ children }) => {
         logIn,
         logOut,
         loginStatus,
+        logOutNew,
       }}
     >
       {children}

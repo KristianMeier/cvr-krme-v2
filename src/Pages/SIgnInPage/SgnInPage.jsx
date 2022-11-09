@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router'
+import { useGlobalContext } from '../../Context/Context'
 import { getLocalStorageArray } from '../../Utilities/getLocalStorageArray'
 
 const localStorageKey = 'usenamePassword'
@@ -9,6 +11,8 @@ export const SignInPage = () => {
   const [employees, setEmployees] = useState(
     getLocalStorageArray(localStorageKey)
   )
+  const { logIn } = useGlobalContext()
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -21,12 +25,15 @@ export const SignInPage = () => {
     setEmployees([...employees, newEmployee])
     setName('')
     setAge('')
+    logIn()
+    navigate('/myaccount')
   }
 
-  const removeItem = (localStorageId) => {
+  const clearLocalStorage = (localStorageId) => {
     setEmployees(
       employees.filter((item) => item.localStorageId !== localStorageId)
     )
+    //clear localStorage
   }
 
   useEffect(() => {

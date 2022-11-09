@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useGlobalContext } from '../../../Context/Context'
 import { ThemeButton } from './ThemeButton'
 
-const localStorageKey = 'login'
+const localStorageKey = 'userNamePassword'
 
 export const NavbarLinks = ({ linksContainerRef, linksRef }) => {
   const navigate = useNavigate()
@@ -17,19 +17,19 @@ export const NavbarLinks = ({ linksContainerRef, linksRef }) => {
     <div className='links-container' ref={linksContainerRef}>
       <ul className='links' ref={linksRef}>
         <ThemeButton />
-        {loginStatus === 'logged in' ? (
+        {loginStatus ? (
           <Link to='/myaccount'>My Account</Link>
         ) : (
-          <button
-            onClick={() => {
-              logIn()
-              navigate('/myaccount')
-            }}
-          >
-            Sign In
-          </button>
+          // <button
+          //   onClick={() => {
+          //     logIn()
+          //     navigate('/myaccount')
+          //   }}
+          // >
+          //   Sign In
+          // </button>
+          <Link to='/signinpage'>Sign In</Link>
         )}
-        <Link to='/signinpage'>Sign In TEMP</Link>
       </ul>
     </div>
   )

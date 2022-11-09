@@ -10,7 +10,7 @@ export const NoAccess = () => {
       title='You need to sign in to acces your account'
       onClick={() => {
         logIn()
-        navigate('/myaccount')
+        navigate('/signinpage')
       }}
       btnTitle='Sign In'
     />

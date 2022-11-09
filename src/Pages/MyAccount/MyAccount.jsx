@@ -4,15 +4,17 @@ import { Account } from '../../Components/Other/Account'
 
 import { useGlobalContext } from '../../Context/Context'
 
+const localStorageKey = 'usenamePassword'
+
 export const MyAccount = () => {
-  const { openModal, logOut } = useGlobalContext()
+  const { openModal, logOut, logOutNew } = useGlobalContext()
   const navigate = useNavigate()
   return (
     <>
       <Account
         title='Logged In'
         onClick={() => {
-          logOut()
+          logOutNew(localStorageKey)
           navigate('/')
           openModal()
         }}
