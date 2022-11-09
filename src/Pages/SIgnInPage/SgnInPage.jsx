@@ -1,44 +1,28 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router'
 import { useGlobalContext } from '../../Context/Context'
-import { getLocalStorageArray } from '../../Utilities/getLocalStorageArray'
-
-const localStorageKey = 'usenamePassword'
 
 export const SignInPage = () => {
   const [name, setName] = useState('')
   const [age, setAge] = useState('')
-  const [employees, setEmployees] = useState(
-    getLocalStorageArray(localStorageKey)
-  )
+  // const employees = getLocalStorageLogin(localStorageKey)
+
   const { logIn } = useGlobalContext()
   const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault()
-
-    const newEmployee = {
-      localStorageId: new Date().getTime().toString(),
-      title: name,
-      age: age,
+    const id = new Date().getTime().toString()
+    const johnnyBeGood = {
+      newId: id,
+      newAge: age,
+      newName: name,
     }
-    setEmployees([...employees, newEmployee])
-    setName('')
-    setAge('')
-    logIn()
+    logIn(johnnyBeGood)
     navigate('/myaccount')
+    setAge('')
+    setName('')
   }
-
-  const clearLocalStorage = (localStorageId) => {
-    setEmployees(
-      employees.filter((item) => item.localStorageId !== localStorageId)
-    )
-    //clear localStorage
-  }
-
-  useEffect(() => {
-    localStorage.setItem(localStorageKey, JSON.stringify(employees))
-  }, [employees])
 
   const onChangeName = (e) => {
     setName(e.target.value)

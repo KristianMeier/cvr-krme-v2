@@ -1,37 +1,19 @@
 import { useState, useContext } from 'react'
 import { createContext } from 'react'
-
-export const getLocalStorageLogin = (key) => {
-  if (localStorage.getItem(key)) {
-    return localStorage.getItem(key)
-  } else {
-    return []
-  }
-}
+import { AuthLocalStorageKey } from '../Constants/Constants'
 
 const AppContext = createContext()
 
 const AppProvider = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  const localStorageKey = 'userNamePassword'
-  const [loginStatus, setLoginStatus] = useState(
-    getLocalStorageLogin(localStorageKey)
-  )
-
-  const logIn = () => {
-    setLoginStatus('logged in')
-    localStorage.setItem(localStorageKey, loginStatus)
+  const logIn = (object) => {
+    const stringyfiedObject = JSON.stringify(object)
+    localStorage.setItem(AuthLocalStorageKey, stringyfiedObject)
   }
 
   const logOut = () => {
-    setLoginStatus('logged out')
-    localStorage.setItem(localStorageKey, loginStatus)
-  }
-
-  const logOutNew = () => {
-    setLoginStatus(false)
-    localStorage.removeItem(localStorageKey)
+    localStorage.removeItem(AuthLocalStorageKey)
   }
 
   const openModal = () => {
@@ -49,8 +31,6 @@ const AppProvider = ({ children }) => {
         closeModal,
         logIn,
         logOut,
-        loginStatus,
-        logOutNew,
       }}
     >
       {children}

@@ -24,9 +24,11 @@
 
 # Choice of Architecture
 
-`I could have built the project only using useState and useEffect, but I have used other hooks also, just for practice. I have used node-sass with flexbox for the styling. This is done since they are used in the project i will work on. As a "backend", I have used localStorage. For the content on the website, I have used one .js file with one object. The choice of backend is made to save time, as barely had time to learn intership-level React and CSS before the internship start date`
+`I could have built the project only using useState and useEffect, but I have used other hooks also, just for practice. This results in unessescary unelegant code. I have used node-sass with flexbox for the styling. This is done since they are used in the project i will work on. As a "backend", I have used localStorage. For the content on the website, I have used one .js file with one object. The choice of backend is made to save time, as barely had time to learn intership-level React and CSS before the internship start date`
 
 # To-do
+
+Refactor, so both AddEmplyee and SigninPage uses Input.jsx in Components/Other
 
 `Learn to use :after, :before and classOne.classTwo like billy.dk-codebase does a lot.`
 `Increase efficiency: Use these more in VS Code instead of mousepad: Command+P, Control+Tab, Command+W.`

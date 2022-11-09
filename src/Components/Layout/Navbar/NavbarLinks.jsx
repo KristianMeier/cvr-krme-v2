@@ -1,33 +1,23 @@
 import React, { useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { useGlobalContext } from '../../../Context/Context'
+import { Link } from 'react-router-dom'
+import { AuthLocalStorageKey } from '../../../Constants/Constants'
+import { getLocalStorageLogin } from '../../../Utilities/getLocalStorageLogin'
 import { ThemeButton } from './ThemeButton'
 
-const localStorageKey = 'userNamePassword'
-
 export const NavbarLinks = ({ linksContainerRef, linksRef }) => {
-  const navigate = useNavigate()
-  const { loginStatus, logIn } = useGlobalContext()
+  const login = getLocalStorageLogin(AuthLocalStorageKey)
 
   useEffect(() => {
-    localStorage.setItem(localStorageKey, loginStatus)
-  }, [loginStatus])
+    localStorage.setItem(AuthLocalStorageKey, login)
+  }, [login])
 
   return (
     <div className='links-container' ref={linksContainerRef}>
       <ul className='links' ref={linksRef}>
         <ThemeButton />
-        {loginStatus ? (
+        {login !== 'logged out' ? (
           <Link to='/myaccount'>My Account</Link>
         ) : (
-          // <button
-          //   onClick={() => {
-          //     logIn()
-          //     navigate('/myaccount')
-          //   }}
-          // >
-          //   Sign In
-          // </button>
           <Link to='/signinpage'>Sign In</Link>
         )}
       </ul>

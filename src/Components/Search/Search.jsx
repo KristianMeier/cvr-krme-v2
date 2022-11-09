@@ -37,7 +37,6 @@ export const Search = () => {
 
   const handleChange = (e) => {
     setSearchField(e.target.value)
-    console.log(companies)
   }
 
   return (
