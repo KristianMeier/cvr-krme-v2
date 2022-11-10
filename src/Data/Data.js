@@ -1,21 +1,28 @@
+import {
+  INFORMATION_PATH,
+  LANDING_PAGE_PATH,
+  MY_ACCOUNT_PATH,
+  VIRKOPEDIA_PATH,
+} from '../Constants/Constants'
+
 export const JsData = {
   headerData: {
     titleLinks: [
       {
         text: 'Search CVR',
-        link: '/',
+        link: LANDING_PAGE_PATH,
       },
       {
         text: 'Virkopedia',
-        link: '/virkopedia',
+        link: VIRKOPEDIA_PATH,
       },
       {
         text: 'Information',
-        link: '/information',
+        link: INFORMATION_PATH,
       },
       {
         text: 'My Account',
-        link: '/myaccount',
+        link: MY_ACCOUNT_PATH,
       },
     ],
   },

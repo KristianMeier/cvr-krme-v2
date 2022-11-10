@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+import { INITIAL_CONTAINER_HEIGHT } from '../../Constants/Constants'
 import { JsData } from '../../Data/Data'
 
 const articles = JsData.annualReportData
@@ -22,8 +23,8 @@ export const AnnualReport = () => {
     const textHeight = textRef.current.getBoundingClientRect().height
 
     textHeight > sectionHeight
-      ? (sectionRef.current.style.height = `${textHeight + 20}px`)
-      : (sectionRef.current.style.height = '250px')
+      ? (sectionRef.current.style.height = `${textHeight + PADDING_BOTTOM}px`)
+      : (sectionRef.current.style.height = INITIAL_CONTAINER_HEIGHT)
   }, [resize])
 
   return (

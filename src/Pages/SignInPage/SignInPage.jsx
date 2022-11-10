@@ -1,33 +1,34 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
+import { MY_ACCOUNT_PATH } from '../../Constants/Constants'
 import { useGlobalContext } from '../../Context/Context'
 
 export const SignInPage = () => {
-  const [password, setName] = useState('')
-  const [name, setAge] = useState('')
+  const [name, setName] = useState('')
+  const [password, setPassword] = useState('')
   const navigate = useNavigate()
   const { logIn } = useGlobalContext()
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const id = new Date().getTime().toString()
+    const localStorageId = new Date().getTime().toString()
     const user = {
-      localStorageId: id,
-      name: name,
-      password: password,
+      localStorageId,
+      name,
+      password,
     }
     logIn(user)
-    navigate('/myaccount')
-    setAge('')
+    navigate(MY_ACCOUNT_PATH)
     setName('')
+    setPassword('')
   }
 
   const onChangeName = (e) => {
-    setName(e.target.value)
+    setPassword(e.target.value)
   }
 
   const onChangeAge = (e) => {
-    setAge(e.target.value)
+    setName(e.target.value)
   }
 
   return (

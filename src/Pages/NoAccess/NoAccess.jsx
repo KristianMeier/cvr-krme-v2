@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router'
 import { Account } from '../../Components/Other/Account'
+import { SIGN_IN_PAGE_PATH } from '../../Constants/Constants'
 
 export const NoAccess = () => {
   const navigate = useNavigate()
@@ -8,7 +9,7 @@ export const NoAccess = () => {
     <Account
       title='You need to sign in to acces your account'
       onClick={() => {
-        navigate('/signinpage')
+        navigate(SIGN_IN_PAGE_PATH)
       }}
       btnTitle='Sign In'
     />
