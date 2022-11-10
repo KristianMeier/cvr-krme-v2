@@ -1,8 +1,8 @@
 export const AddEmployeesInput = ({
   name,
-  age,
+  title,
   onChangeName,
-  onChangeAge,
+  onChangeTitle,
   handleSubmit,
 }) => {
   return (
@@ -20,12 +20,12 @@ export const AddEmployeesInput = ({
           />
           <input
             className='input'
-            type='number'
-            id='age'
-            name='age'
-            placeholder='Insert age...'
-            value={age}
-            onChange={onChangeAge}
+            type='text'
+            id='title'
+            name='title'
+            placeholder='Insert title...'
+            value={title}
+            onChange={onChangeTitle}
           />
           <button type='submit' onClick={handleSubmit}>
             Add Employee

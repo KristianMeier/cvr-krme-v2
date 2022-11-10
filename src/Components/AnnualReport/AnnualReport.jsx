@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
-import { INITIAL_CONTAINER_HEIGHT } from '../../Constants/Constants'
+import {
+  INITIAL_CONTAINER_HEIGHT,
+  PADDING_BOTTOM,
+} from '../../Constants/Constants'
 import { JsData } from '../../Data/Data'
 
 const articles = JsData.annualReportData

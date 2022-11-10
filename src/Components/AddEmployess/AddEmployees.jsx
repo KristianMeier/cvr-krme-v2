@@ -6,7 +6,7 @@ import { AddEmployeesOutput } from './AddEmployeesOutput'
 
 export const AddEmployees = () => {
   const [name, setName] = useState('')
-  const [age, setAge] = useState('')
+  const [title, setTitle] = useState('')
   const [employees, setEmployees] = useState(
     getLocalStorageArray(EMPLOYEE_LOCAL_STORAGE_KEY)
   )
@@ -16,15 +16,15 @@ export const AddEmployees = () => {
 
     const newEmployee = {
       localStorageId: new Date().getTime().toString(),
-      title: name,
-      age: age,
+      name,
+      title,
     }
     setEmployees([...employees, newEmployee])
     setName('')
-    setAge('')
+    setTitle('')
   }
 
-  const removeItem = (localStorageId) => {
+  const removeEmployee = (localStorageId) => {
     setEmployees(
       employees.filter((item) => item.localStorageId !== localStorageId)
     )
@@ -38,8 +38,8 @@ export const AddEmployees = () => {
     setName(e.target.value)
   }
 
-  const onChangeAge = (e) => {
-    setAge(e.target.value)
+  const onChangeTitle = (e) => {
+    setTitle(e.target.value)
   }
 
   return (
@@ -48,12 +48,12 @@ export const AddEmployees = () => {
       <div className='container'>
         <AddEmployeesInput
           name={name}
-          age={age}
+          title={title}
           onChangeName={onChangeName}
-          onChangeAge={onChangeAge}
+          onChangeTitle={onChangeTitle}
           handleSubmit={handleSubmit}
         />
-        <AddEmployeesOutput removeItem={removeItem} list={employees} />
+        <AddEmployeesOutput removeEmployee={removeEmployee} list={employees} />
       </div>
     </div>
   )
