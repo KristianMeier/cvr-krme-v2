@@ -34,7 +34,7 @@ export const SignInPage = () => {
 
   return (
     <div className='sign-in-page'>
-      <h1>Login</h1>
+      <h1>Login Page</h1>
       <article className='sign-in-container'>
         <Form
           typeOne='text'

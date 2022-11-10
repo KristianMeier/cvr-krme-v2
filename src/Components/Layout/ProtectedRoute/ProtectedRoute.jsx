@@ -3,7 +3,7 @@ import {
   LOG_OUT_LOCAL_STORAGE_VALUE,
   NO_ACCESS_PATH,
 } from '../../../Constants/Constants'
-import { getLocalStorageLogin } from '../../../Utilities/Auth'
+import { getLocalStorageLogin } from '../../../Utilities/getLocalStorageLogin'
 
 export const ProtectedRoute = ({ children }) => {
   const loginStatus = getLocalStorageLogin()

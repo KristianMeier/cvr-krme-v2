@@ -1,3 +1,29 @@
+// Breakpoints from billy.dk
+@mixin breakpoint-lg-up {
+  @media screen and (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin breakpoint-xmd-up {
+  @media screen and (min-width: $breakpoint-xmd) {
+    @content;
+  }
+}
+
+@mixin breakpoint-md-up {
+  @media screen and (min-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin breakpoint-sm-up {
+  @media screen and (min-width: $breakpoint-sm) {
+    @content;
+  }
+}
+
+// Layout
 @mixin flex-col-gap-1rem {
   display: flex;
   flex-direction: column;
@@ -36,34 +62,4 @@
   font-size: 1.25rem;
   padding: 1rem;
   border: $border;
-}
-
-// Breakpoints
-
-//1200px
-@mixin breakpoint-lg-up {
-  @media screen and (min-width: $breakpoint-lg) {
-    @content;
-  }
-}
-
-// 1000px
-@mixin breakpoint-xmd-up {
-  @media screen and (min-width: $breakpoint-xmd) {
-    @content;
-  }
-}
-
-// 767px
-@mixin breakpoint-md-up {
-  @media screen and (min-width: $breakpoint-md) {
-    @content;
-  }
-}
-
-//576px
-@mixin breakpoint-sm-up {
-  @media screen and (min-width: $breakpoint-sm) {
-    @content;
-  }
 }

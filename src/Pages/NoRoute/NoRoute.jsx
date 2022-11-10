@@ -8,7 +8,7 @@ export const NoRoute = () => {
 
   return (
     <Account
-      title={`You tried to access: /${routeParams}`}
+      title={`Sorry, there is no site here: /${routeParams}.`}
       onClick={() => navigate(LANDING_PAGE_PATH)}
       btnTitle='Frontpage'
     />

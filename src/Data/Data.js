@@ -28,85 +28,24 @@ export const JsData = {
   },
   footerData: {
     firstColumn: [
-      {
-        text: 'Topics',
-        link: '/Emner',
-      },
-      {
-        text: 'Find selfservice or more',
-        link: '/Selvbetjening',
-      },
-      {
-        text: 'Authorities',
-        link: '/Myndigheder',
-      },
-      {
-        text: 'Find Selfservice',
-        link: '/FindSelvbetjening',
-      },
+      'Topics',
+      'Find selfservice or more',
+      'Authorities',
+      'Find Selfservice',
     ],
     secondColumn: [
-      {
-        text: 'Contact CVR',
-        link: '/KontantCvr',
-      },
-      { text: 'Cookies', link: '/Cookies' },
-      {
-        text: 'Find Selfservice',
-        link: '/FindSelvbetjening',
-      },
-      {
-        text: 'Personal Data',
-        link: '/PersonData',
-      },
-      {
-        text: 'Declaration of access',
-        link: '/Tilgængelighedserklærring',
-      },
+      'Contact CVR',
+      'Cookies',
+      'Find Selfservice',
+      'Personal Data',
+      'Declaration of access',
     ],
     thirdColumn: [
-      {
-        text: 'Virk',
-        link: '/Virk',
-      },
-      {
-        text: 'New rules',
-        link: '/NyeRegler',
-      },
-      {
-        text: 'Privacy',
-        link: '/Privacykompasset',
-      },
-      {
-        text: 'Security Check',
-        link: '/Sikkerhedstjekket',
-      },
-      {
-        text: 'Virk.dk Assistent',
-        link: '/VirkAssistenten',
-      },
-    ],
-    fourthColumn: [
-      {
-        text: 'Annual Report',
-        link: '/AnnualReport',
-      },
-      {
-        text: 'Tax Rules',
-        link: '/TaxRules',
-      },
-      {
-        text: 'Deadlines',
-        link: '/Deadlines',
-      },
-      {
-        text: 'Quarty VAT',
-        link: '/QuaterlyVAT',
-      },
-      {
-        text: 'Find Accountant',
-        link: '/FindAccountant',
-      },
+      'Virk',
+      'New rules',
+      'Privacy',
+      'Security Check',
+      'Virk.dk Assistent',
     ],
   },
   trialbalanceData: [

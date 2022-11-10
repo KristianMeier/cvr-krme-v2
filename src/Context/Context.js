@@ -4,7 +4,7 @@ import {
   AUTH_LOCAL_STORAGE_KEY,
   LOG_OUT_LOCAL_STORAGE_VALUE,
 } from '../Constants/Constants'
-import { getLocalStorageLogin } from '../Utilities/Auth'
+import { getLocalStorageLogin } from '../Utilities/getLocalStorageLogin'
 
 const AppContext = createContext()
 

@@ -3,7 +3,7 @@ import { AddEmployees } from '../../Components/AddEmployess/AddEmployees'
 import { Account } from '../../Components/Other/Account'
 import { LANDING_PAGE_PATH } from '../../Constants/Constants'
 import { useGlobalContext } from '../../Context/Context'
-import { getLocalStorageLogin } from '../../Utilities/Auth'
+import { getLocalStorageLogin } from '../../Utilities/getLocalStorageLogin'
 
 export const MyAccount = () => {
   const { openModal, logOut } = useGlobalContext()

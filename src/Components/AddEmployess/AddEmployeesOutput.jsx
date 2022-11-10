@@ -30,7 +30,7 @@ export const AddEmployeesOutput = ({ list, removeEmployee }) => {
         </table>
       ) : (
         <div className='text-container'>
-          <h3>There are no employees added</h3>
+          <h3>There are no employees with access.</h3>
         </div>
       )}
     </article>

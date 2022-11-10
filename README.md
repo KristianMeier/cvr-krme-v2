@@ -20,7 +20,7 @@
 
 # Project Scope
 
-`I built some of the pages/features from a site i use everyday in accounting: businessindenmark.virk.dk. This is done so I could pratice / prepare for the internship 01/01-2023. I been told, that the tasks in the internship will be 60% CSS and 40% React.`
+`I built some of the pages/features from a site i use everyday in accounting: https://businessindenmark.virk.dk. This is done so I could pratice / prepare for the internship 01/01-2023. I was told, that the tasks in the internship will be 60% CSS and 40% React.`
 
 # Choice of Architecture
 
@@ -28,8 +28,6 @@
 
 # To-do
 
-Refactor, so both AddEmplyee and SigninPage uses Input.jsx in Components/Other
-
 `Learn to use :after, :before and classOne.classTwo like billy.dk-codebase does a lot.`
-`Increase efficiency: Use these more in VS Code instead of mousepad: Command+P, Control+Tab, Command+W.`
+`Increase efficiency: Use these more in VS Code instead of mousepad: Command+P and Control+Tab`
 `Make custom React snippits and look up VS Code and Emmet stuff, to improve efficiency.`

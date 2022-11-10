@@ -10,4 +10,14 @@
   @include breakpoint-sm-up {
     flex-direction: row;
   }
+
+  .logo-container {
+    @include breakpoint-sm-up {
+      flex: 0 0 calc(50% - 2rem);
+    }
+
+    @include breakpoint-xmd-up {
+      flex: 0 0 calc(25% - 2rem);
+    }
+  }
 }
