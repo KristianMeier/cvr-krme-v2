@@ -4,11 +4,11 @@ import {
   LIGHT_THEME,
   THEME_LOCAL_STORAGE_KEY,
 } from '../../../Constants/Constants'
-import { getLocalStorageTheme } from '../../../Utilities/getLocalStorageTheme'
+import { getLocalStorage } from '../../../Utilities/getLocalStorage'
 
 export const ThemeButton = () => {
   const [theme, setTheme] = useState(
-    getLocalStorageTheme(THEME_LOCAL_STORAGE_KEY, LIGHT_THEME)
+    getLocalStorage(THEME_LOCAL_STORAGE_KEY, LIGHT_THEME)
   )
 
   const toggleTheme = () => {

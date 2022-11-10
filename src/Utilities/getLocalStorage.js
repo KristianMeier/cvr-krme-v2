@@ -1,7 +1,7 @@
-export const getLocalStorageTheme = (key, theme) => {
+export const getLocalStorage = (key, value) => {
   if (localStorage.getItem(key)) {
     return localStorage.getItem(key)
   } else {
-    return theme
+    return value
   }
 }

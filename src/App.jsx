@@ -10,9 +10,11 @@ import { NoAccess } from './Pages/NoAccess/NoAccess'
 import { ProtectedRoute } from './Components/Layout/ProtectedRoute/ProtectedRoute'
 import { SignInPage } from './Pages/SignInPage/SignInPage'
 import {
+  COMPANY_PATH,
   INFORMATION_PATH,
   MY_ACCOUNT_PATH,
   NO_ACCESS_PATH,
+  NO_ROUTE_PATH,
   SIGN_IN_PAGE_PATH,
   VIRKOPEDIA_PATH,
 } from './Constants/Constants'
@@ -26,8 +28,8 @@ export const App = () => {
           <Route path={VIRKOPEDIA_PATH} element={<Virkopedia />} />
           <Route path={INFORMATION_PATH} element={<Information />} />
           <Route path={SIGN_IN_PAGE_PATH} element={<SignInPage />} />
-          <Route path='/:routeParams' element={<NoRoute />} />
-          <Route path='/company/:arrayIndex' element={<Company />} />
+          <Route path={NO_ROUTE_PATH} element={<NoRoute />} />
+          <Route path={COMPANY_PATH} element={<Company />} />
           <Route
             path={MY_ACCOUNT_PATH}
             element={

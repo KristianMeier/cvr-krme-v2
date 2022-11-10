@@ -1,15 +1,22 @@
 import { useNavigate } from 'react-router'
 import { AddEmployees } from '../../Components/AddEmployess/AddEmployees'
 import { Account } from '../../Components/Other/Account'
-import { LANDING_PAGE_PATH } from '../../Constants/Constants'
+import {
+  AUTH_LOCAL_STORAGE_KEY,
+  LANDING_PAGE_PATH,
+  LOG_OUT_LOCAL_STORAGE_VALUE,
+} from '../../Constants/Constants'
 import { useGlobalContext } from '../../Context/Context'
-import { getLocalStorageLogin } from '../../Utilities/getLocalStorageLogin'
+import { getLocalStorage } from '../../Utilities/getLocalStorage'
 
 export const MyAccount = () => {
   const { openModal, logOut } = useGlobalContext()
   const navigate = useNavigate()
 
-  const loginLocalStorageString = getLocalStorageLogin()
+  const loginLocalStorageString = getLocalStorage(
+    AUTH_LOCAL_STORAGE_KEY,
+    LOG_OUT_LOCAL_STORAGE_VALUE
+  )
   const loginName = JSON.parse(loginLocalStorageString).name
 
   return (

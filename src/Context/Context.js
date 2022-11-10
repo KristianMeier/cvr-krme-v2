@@ -4,13 +4,15 @@ import {
   AUTH_LOCAL_STORAGE_KEY,
   LOG_OUT_LOCAL_STORAGE_VALUE,
 } from '../Constants/Constants'
-import { getLocalStorageLogin } from '../Utilities/getLocalStorageLogin'
+import { getLocalStorage } from '../Utilities/getLocalStorage'
 
 const AppContext = createContext()
 
 const AppProvider = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const [login, setLogin] = useState(getLocalStorageLogin())
+  const [login, setLogin] = useState(
+    getLocalStorage(AUTH_LOCAL_STORAGE_KEY, LOG_OUT_LOCAL_STORAGE_VALUE)
+  )
 
   const logOut = () => {
     localStorage.setItem(AUTH_LOCAL_STORAGE_KEY, LOG_OUT_LOCAL_STORAGE_VALUE)

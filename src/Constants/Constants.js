@@ -18,6 +18,8 @@ export const VIRKOPEDIA_PATH = '/virkopedia'
 export const INFORMATION_PATH = '/information'
 export const SIGN_IN_PAGE_PATH = '/signinpage'
 export const NO_ACCESS_PATH = '/noaccess'
+export const NO_ROUTE_PATH = '/:routeParams'
+export const COMPANY_PATH = '/company/:arrayIndex'
 
 // Annual Repport
 export const INITIAL_CONTAINER_HEIGHT = '250px'
