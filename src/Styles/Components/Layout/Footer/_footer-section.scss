@@ -1,5 +1,4 @@
-.footer-section,
-.logo-container {
+.footer-section {
   @include flex-col-gap-1rem;
   align-items: center;
   justify-content: center;
