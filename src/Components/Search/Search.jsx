@@ -12,6 +12,9 @@ export const Search = () => {
   const [nPages, setNPages] = useState(startPages)
   const [companies, setCompanies] = useState([])
   const [page, setPage] = useState(1)
+  const [noOfReturnedCompanies, setNoOfReturnedCompanies] = useState(
+    allCompanies.length
+  )
 
   const pageNumbers = [...Array(nPages + 1).keys()].slice(1)
 
@@ -23,6 +26,8 @@ export const Search = () => {
         person.postNoCity.toLowerCase().includes(searchField.toLowerCase())
       )
     })
+
+    setNoOfReturnedCompanies(filteredCompanies.length)
 
     const firstElement = page * COMPANIES_PER_PAGE - COMPANIES_PER_PAGE
     const lastElement = page * COMPANIES_PER_PAGE
@@ -52,14 +57,14 @@ export const Search = () => {
             onChange={handleChange}
           />
         </div>
-        {companies.length === 0 ? (
+        {noOfReturnedCompanies === 0 ? (
           <h1>No companies found</h1>
         ) : (
           companies.map((company) => {
             return <SearchCompany key={company.arrayIndex} company={company} />
           })
         )}
-        <SearchPagination pageNumbers={pageNumbers} sePage={setPage} />
+        <SearchPagination pageNumbers={pageNumbers} setPage={setPage} />
       </section>
     </div>
   )

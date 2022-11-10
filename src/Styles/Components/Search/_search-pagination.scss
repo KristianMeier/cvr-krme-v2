@@ -1,11 +1,17 @@
 .search-pagination {
+  display: flex;
+  justify-content: center;
+
   ul {
     list-style: none;
     display: flex;
     gap: 1rem;
+    text-align: center;
   }
 
   .pagination-numbers {
     @include borderless-button;
+    font-size: 1.25rem;
+    font-weight: $font-weight-bold;
   }
 }
