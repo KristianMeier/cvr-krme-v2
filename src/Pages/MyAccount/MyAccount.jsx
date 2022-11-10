@@ -1,15 +1,16 @@
 import { useNavigate } from 'react-router'
 import { AddEmployees } from '../../Components/AddEmployess/AddEmployees'
 import { Account } from '../../Components/Other/Account'
-import { AuthLocalStorageKey } from '../../Constants/Constants'
+import { authLocalStorageKey } from '../../Constants/Constants'
 import { useGlobalContext } from '../../Context/Context'
+import { logOut } from '../../Utilities/Auth'
 import { getLocalStorageLogin } from '../../Utilities/getLocalStorageLogin'
 
 export const MyAccount = () => {
-  const { logOut, openModal } = useGlobalContext()
+  const { openModal } = useGlobalContext()
   const navigate = useNavigate()
 
-  const loginLocalStorageString = getLocalStorageLogin(AuthLocalStorageKey)
+  const loginLocalStorageString = getLocalStorageLogin(authLocalStorageKey)
   const loginName = JSON.parse(loginLocalStorageString).newName
 
   return (

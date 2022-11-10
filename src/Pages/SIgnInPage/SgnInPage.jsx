@@ -1,13 +1,10 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
-import { useGlobalContext } from '../../Context/Context'
+import { logIn } from '../../Utilities/Auth'
 
 export const SignInPage = () => {
   const [name, setName] = useState('')
   const [age, setAge] = useState('')
-  // const employees = getLocalStorageLogin(localStorageKey)
-
-  const { logIn } = useGlobalContext()
   const navigate = useNavigate()
 
   const handleSubmit = (e) => {

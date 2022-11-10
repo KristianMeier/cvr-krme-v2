@@ -1,9 +1,8 @@
 import { useNavigate } from 'react-router'
 import { Account } from '../../Components/Other/Account'
-import { useGlobalContext } from '../../Context/Context'
+import { logIn } from '../../Utilities/Auth'
 
 export const NoAccess = () => {
-  const { logIn } = useGlobalContext()
   const navigate = useNavigate()
   return (
     <Account

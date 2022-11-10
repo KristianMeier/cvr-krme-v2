@@ -1,1 +1,1 @@
-export const AuthLocalStorageKey = 'userNamePassword'
+export const authLocalStorageKey = 'userNamePassword'

@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { AuthLocalStorageKey } from '../../../Constants/Constants'
+import { authLocalStorageKey } from '../../../Constants/Constants'
 import { getLocalStorageLogin } from '../../../Utilities/getLocalStorageLogin'
 import { ThemeButton } from './ThemeButton'
 
 export const NavbarLinks = ({ linksContainerRef, linksRef }) => {
-  const login = getLocalStorageLogin(AuthLocalStorageKey)
+  const login = getLocalStorageLogin(authLocalStorageKey)
 
   useEffect(() => {
-    localStorage.setItem(AuthLocalStorageKey, login)
+    localStorage.setItem(authLocalStorageKey, login)
   }, [login])
 
   return (
