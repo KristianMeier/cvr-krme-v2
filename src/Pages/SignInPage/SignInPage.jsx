@@ -1,21 +1,22 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
-import { logIn } from '../../Utilities/Auth'
+import { useGlobalContext } from '../../Context/Context'
 
 export const SignInPage = () => {
-  const [name, setName] = useState('')
-  const [age, setAge] = useState('')
+  const [password, setName] = useState('')
+  const [name, setAge] = useState('')
   const navigate = useNavigate()
+  const { logIn } = useGlobalContext()
 
   const handleSubmit = (e) => {
     e.preventDefault()
     const id = new Date().getTime().toString()
-    const johnnyBeGood = {
-      newId: id,
-      newAge: age,
-      newName: name,
+    const user = {
+      localStorageId: id,
+      name: name,
+      password: password,
     }
-    logIn(johnnyBeGood)
+    logIn(user)
     navigate('/myaccount')
     setAge('')
     setName('')
@@ -42,7 +43,7 @@ export const SignInPage = () => {
                 id='firstName'
                 name='firstName'
                 placeholder='Insert name...'
-                value={name}
+                value={password}
                 onChange={onChangeName}
               />
               <input
@@ -51,7 +52,7 @@ export const SignInPage = () => {
                 id='age'
                 name='age'
                 placeholder='Insert age...'
-                value={age}
+                value={name}
                 onChange={onChangeAge}
               />
               <button type='submit' onClick={handleSubmit}>
@@ -60,7 +61,6 @@ export const SignInPage = () => {
             </div>
           </form>
         </article>
-          
       </div>
     </div>
   )

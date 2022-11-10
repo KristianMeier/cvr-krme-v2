@@ -1,10 +1,27 @@
 import { useState, useContext } from 'react'
 import { createContext } from 'react'
+import {
+  AUTH_LOCAL_STORAGE_KEY,
+  LOG_OUT_LOCAL_STORAGE_VALUE,
+} from '../Constants/Constants'
+import { getLocalStorageLogin } from '../Utilities/Auth'
 
 const AppContext = createContext()
 
 const AppProvider = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [login, setLogin] = useState(getLocalStorageLogin())
+
+  const logOut = () => {
+    localStorage.setItem(AUTH_LOCAL_STORAGE_KEY, LOG_OUT_LOCAL_STORAGE_VALUE)
+    setLogin(LOG_OUT_LOCAL_STORAGE_VALUE)
+  }
+
+  const logIn = (object) => {
+    const stringyfiedObject = JSON.stringify(object)
+    setLogin(stringyfiedObject)
+    localStorage.setItem(AUTH_LOCAL_STORAGE_KEY, stringyfiedObject)
+  }
 
   const openModal = () => {
     setIsModalOpen(true)
@@ -19,6 +36,9 @@ const AppProvider = ({ children }) => {
         isModalOpen,
         openModal,
         closeModal,
+        login,
+        logIn,
+        logOut,
       }}
     >
       {children}

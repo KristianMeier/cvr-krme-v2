@@ -8,7 +8,7 @@ import { Information } from './Pages/Information/Information'
 import { LandingPage } from './Pages/LandingPage/LandingPage'
 import { NoAccess } from './Pages/NoAccess/NoAccess'
 import { ProtectedRoute } from './Components/Layout/ProtectedRoute/ProtectedRoute'
-import { SignInPage } from './Pages/SIgnInPage/SgnInPage'
+import { SignInPage } from './Pages/SignInPage/SignInPage'
 
 export const App = () => {
   return (

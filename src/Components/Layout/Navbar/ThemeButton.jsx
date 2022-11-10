@@ -1,31 +1,32 @@
 import React, { useState, useEffect } from 'react'
+import {
+  DARK_THEME,
+  LIGHT_THEME,
+  THEME_LOCAL_STORAGE_KEY,
+} from '../../../Constants/Constants'
 import { getLocalStorageTheme } from '../../../Utilities/getLocalStorageTheme'
-
-const localStorageKey = 'theme'
-const initialTheme = 'light-theme'
-const darkTheme = 'dark-theme'
 
 export const ThemeButton = () => {
   const [theme, setTheme] = useState(
-    getLocalStorageTheme(localStorageKey, initialTheme)
+    getLocalStorageTheme(THEME_LOCAL_STORAGE_KEY, LIGHT_THEME)
   )
 
   const toggleTheme = () => {
-    if (theme === initialTheme) {
-      setTheme(darkTheme)
+    if (theme === LIGHT_THEME) {
+      setTheme(DARK_THEME)
     } else {
-      setTheme(initialTheme)
+      setTheme(LIGHT_THEME)
     }
   }
 
   useEffect(() => {
     document.documentElement.className = theme
-    localStorage.setItem(localStorageKey, theme)
+    localStorage.setItem(THEME_LOCAL_STORAGE_KEY, theme)
   }, [theme])
 
   return (
     <button className='theme-button' onClick={toggleTheme}>
-      {theme === initialTheme ? 'Dark Theme' : 'Standard Theme'}
+      {theme === LIGHT_THEME ? 'Dark Theme' : 'Standard Theme'}
     </button>
   )
 }

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import { RECORDS_PER_PAGE as COMPANIES_PER_PAGE } from '../../Constants/Constants'
 import { JsData } from '../../Data/Data'
 import { SearchCompany } from './SearchCompany'
 import { SearchPagination } from './SearchPagination'
 
 const allCompanies = JsData.searchData.companies
-const recordsPerPage = 3
-const startPages = Math.ceil(allCompanies.length / recordsPerPage)
+const startPages = Math.ceil(allCompanies.length / COMPANIES_PER_PAGE)
 
 export const Search = () => {
   const [searchField, setSearchField] = useState('')
@@ -24,13 +24,13 @@ export const Search = () => {
       )
     })
 
-    const firstElement = page * recordsPerPage - recordsPerPage
-    const lastElement = page * recordsPerPage
+    const firstElement = page * COMPANIES_PER_PAGE - COMPANIES_PER_PAGE
+    const lastElement = page * COMPANIES_PER_PAGE
     const paginatedResults = filteredCompanies.slice(firstElement, lastElement)
     setCompanies(paginatedResults)
 
     const filteredPageNumbers = Math.ceil(
-      filteredCompanies.length / recordsPerPage
+      filteredCompanies.length / COMPANIES_PER_PAGE
     )
     setNPages(filteredPageNumbers)
   }, [page, searchField])

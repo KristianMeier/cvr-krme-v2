@@ -1,15 +1,14 @@
 import { useState, useEffect } from 'react'
+import { EMPLOYEE_LOCAL_STORAGE_KEY } from '../../Constants/Constants'
 import { getLocalStorageArray } from '../../Utilities/getLocalStorageArray'
 import { AddEmployeesInput } from './AddEmployeesInput'
 import { AddEmployeesOutput } from './AddEmployeesOutput'
-
-const localStorageKey = 'employees'
 
 export const AddEmployees = () => {
   const [name, setName] = useState('')
   const [age, setAge] = useState('')
   const [employees, setEmployees] = useState(
-    getLocalStorageArray(localStorageKey)
+    getLocalStorageArray(EMPLOYEE_LOCAL_STORAGE_KEY)
   )
 
   const handleSubmit = (e) => {
@@ -32,7 +31,7 @@ export const AddEmployees = () => {
   }
 
   useEffect(() => {
-    localStorage.setItem(localStorageKey, JSON.stringify(employees))
+    localStorage.setItem(EMPLOYEE_LOCAL_STORAGE_KEY, JSON.stringify(employees))
   }, [employees])
 
   const onChangeName = (e) => {

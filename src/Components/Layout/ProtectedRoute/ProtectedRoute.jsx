@@ -1,9 +1,10 @@
 import { Navigate } from 'react-router-dom'
-import { authLocalStorageKey } from '../../../Constants/Constants'
-import { getLocalStorageLogin } from '../../../Utilities/getLocalStorageLogin'
+import { LOG_OUT_LOCAL_STORAGE_VALUE } from '../../../Constants/Constants'
+import { getLocalStorageLogin } from '../../../Utilities/Auth'
 
 export const ProtectedRoute = ({ children }) => {
-  const loginStatus = getLocalStorageLogin(authLocalStorageKey)
-  if (loginStatus === 'logged out') return <Navigate to='/noaccess' />
+  const loginStatus = getLocalStorageLogin()
+  if (loginStatus === LOG_OUT_LOCAL_STORAGE_VALUE)
+    return <Navigate to='/noaccess' />
   return children
 }
