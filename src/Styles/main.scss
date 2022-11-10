@@ -8,7 +8,6 @@
 //Components
 @import 'Components/Account/account';
 @import 'Components/AddEmployees/add-employees';
-@import 'Components/AddEmployees/add-employees-input';
 @import 'Components/AddEmployees/add-employees-output';
 @import 'Components/AnnualReport/annual-report';
 @import 'Components/Layout/DarkModeWrapper/darkmode';
@@ -19,6 +18,8 @@
 @import 'Components/Layout/Navbar/navbar';
 @import 'Components/Layout/Navbar/navbar-links';
 @import 'Components/Other/modal';
+@import 'Components/Other/form';
+@import 'Components/Other/input-field';
 @import 'Components/Placeholder/placeholder';
 @import 'Components/Placeholder/placeholder-wrapper';
 @import 'Components/Search/search';
@@ -32,6 +33,7 @@
 @import 'Pages/Company/company';
 @import 'Pages/Company/company-info';
 @import 'Pages/Company/company-table';
+@import 'Pages/SignInPage/sign-in-page';
 @import 'Pages/Virkopedia/virkopedia';
 @import 'Pages/Virkopedia/virkopedia-article';
 @import 'Pages/Virkopedia/virkopedia-tab';

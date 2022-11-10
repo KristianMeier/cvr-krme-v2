@@ -29,7 +29,9 @@ export const AddEmployeesOutput = ({ list, removeEmployee }) => {
           </tbody>
         </table>
       ) : (
-        <h3>There are no employees added</h3>
+        <div className='text-container'>
+          <h3>There are no employees added</h3>
+        </div>
       )}
     </article>
   )
