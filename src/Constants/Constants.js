@@ -3,6 +3,9 @@ export const AUTH_LOCAL_STORAGE_KEY = 'userNamePassword'
 export const EMPLOYEE_LOCAL_STORAGE_KEY = 'employees'
 export const LOG_OUT_LOCAL_STORAGE_VALUE = 'logget out'
 
+// Add Employees
+export const NO_EMPLOYEES_LOCAL_STORAGE_VALUE = []
+
 // Darkmode
 export const THEME_LOCAL_STORAGE_KEY = 'theme'
 export const LIGHT_THEME = 'light-theme'

@@ -1,15 +1,21 @@
 import { useState, useEffect } from 'react'
-import { EMPLOYEE_LOCAL_STORAGE_KEY } from '../../Constants/Constants'
-import { getLocalStorageEmployees } from '../../Utilities/getLocalStorageEmployees'
+import {
+  EMPLOYEE_LOCAL_STORAGE_KEY,
+  NO_EMPLOYEES_LOCAL_STORAGE_VALUE,
+} from '../../Constants/Constants'
+import { getLocalStorage } from '../../Utilities/getLocalStorage'
 import { Form } from '../Other/Form'
 import { AddEmployeesOutput } from './AddEmployeesOutput'
 
 export const AddEmployees = () => {
+  const emplyeesInJson = getLocalStorage(
+    EMPLOYEE_LOCAL_STORAGE_KEY,
+    NO_EMPLOYEES_LOCAL_STORAGE_VALUE
+  )
+
   const [name, setName] = useState('')
   const [title, setTitle] = useState('')
-  const [employees, setEmployees] = useState(
-    getLocalStorageEmployees(EMPLOYEE_LOCAL_STORAGE_KEY)
-  )
+  const [employees, setEmployees] = useState(JSON.parse(emplyeesInJson))
 
   const handleSubmit = (e) => {
     e.preventDefault()
