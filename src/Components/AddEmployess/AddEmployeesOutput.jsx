@@ -10,7 +10,7 @@ export const AddEmployeesOutput = ({ list, removeEmployee }) => {
               <th>Remove</th>
             </tr>
             {list.map((item, index) => {
-              const { localStorageId, title, name } = item
+              const { localStorageId, name, title } = item
               return (
                 <tr key={index}>
                   <td>{name}</td>

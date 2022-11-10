@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { EMPLOYEE_LOCAL_STORAGE_KEY } from '../../Constants/Constants'
-import { getLocalStorageArray } from '../../Utilities/getLocalStorageArray'
+import { getLocalStorageEmployees } from '../../Utilities/getLocalStorageEmployees'
 import { AddEmployeesInput } from './AddEmployeesInput'
 import { AddEmployeesOutput } from './AddEmployeesOutput'
 
@@ -8,7 +8,7 @@ export const AddEmployees = () => {
   const [name, setName] = useState('')
   const [title, setTitle] = useState('')
   const [employees, setEmployees] = useState(
-    getLocalStorageArray(EMPLOYEE_LOCAL_STORAGE_KEY)
+    getLocalStorageEmployees(EMPLOYEE_LOCAL_STORAGE_KEY)
   )
 
   const handleSubmit = (e) => {

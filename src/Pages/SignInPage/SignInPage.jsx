@@ -24,11 +24,11 @@ export const SignInPage = () => {
   }
 
   const onChangeName = (e) => {
-    setPassword(e.target.value)
+    setName(e.target.value)
   }
 
-  const onChangeAge = (e) => {
-    setName(e.target.value)
+  const onChangePassword = (e) => {
+    setPassword(e.target.value)
   }
 
   return (
@@ -41,23 +41,23 @@ export const SignInPage = () => {
               <input
                 className='input'
                 type='text'
-                id='firstName'
-                name='firstName'
+                id='name'
+                name='name'
                 placeholder='Insert name...'
-                value={password}
+                value={name}
                 onChange={onChangeName}
               />
               <input
                 className='input'
-                type='number'
-                id='age'
-                name='age'
-                placeholder='Insert age...'
-                value={name}
-                onChange={onChangeAge}
+                type='text'
+                id='password'
+                name='parssword'
+                placeholder='Insert password...'
+                value={password}
+                onChange={onChangePassword}
               />
               <button type='submit' onClick={handleSubmit}>
-                Add Employee
+                Sign In
               </button>
             </div>
           </form>
