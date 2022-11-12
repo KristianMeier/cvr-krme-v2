@@ -71,7 +71,7 @@
 
   .resize-btn {
     @include borderless-button;
-    text-transform: none;
+    font-weight: 900;
   }
 
   p {

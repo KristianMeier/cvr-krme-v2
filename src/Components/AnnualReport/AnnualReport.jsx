@@ -20,11 +20,9 @@ export const AnnualReport = () => {
     if (index > lastIndex) setIndex(0)
   }, [index])
 
-  // Fun with useRef and overflow:hidden
   useEffect(() => {
     const sectionHeight = sectionRef.current.getBoundingClientRect().height
     const textHeight = textRef.current.getBoundingClientRect().height
-
     textHeight > sectionHeight
       ? (sectionRef.current.style.height = `${textHeight + PADDING_BOTTOM}px`)
       : (sectionRef.current.style.height = INITIAL_CONTAINER_HEIGHT)
@@ -52,7 +50,7 @@ export const AnnualReport = () => {
                   className='resize-btn'
                   onClick={() => !setResize(!resize)}
                 >
-                  Fit Container
+                  Hej
                 </button>
               </div>
               <p ref={textRef}>{text}</p>
