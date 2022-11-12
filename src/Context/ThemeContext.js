@@ -8,7 +8,7 @@ import { getLocalStorage } from '../Utilities/getLocalStorage'
 
 const AppContext = createContext()
 
-export const AppProvider = ({ children }) => {
+export const ThemeContext = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [login, setLogin] = useState(
     getLocalStorage(AUTH_LOCAL_STORAGE_KEY, LOG_OUT_LOCAL_STORAGE_VALUE)

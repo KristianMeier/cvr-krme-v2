@@ -22,6 +22,7 @@
   .prev {
     left: 0;
   }
+
   .next {
     right: 0;
   }
@@ -43,6 +44,7 @@
     opacity: 1;
     transform: translateX(0);
   }
+
   article.lastSlide {
     transform: translateX(-100%);
   }

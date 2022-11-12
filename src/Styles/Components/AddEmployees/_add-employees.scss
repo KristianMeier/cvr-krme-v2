@@ -5,12 +5,14 @@
     @include flex-col-gap-1rem;
     width: 80%;
     gap: 2rem;
+
     @include breakpoint-md-up {
       flex-direction: row;
       align-items: space-evenly;
       width: 100%;
     }
   }
+
   .add-employees-input {
     flex: 0 0 40%;
     align-self: flex-end;

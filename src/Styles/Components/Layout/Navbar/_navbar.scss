@@ -2,12 +2,14 @@
   box-shadow: var(--border-shadow);
   display: flex;
   justify-content: left;
+
   @include breakpoint-md-up {
     justify-content: center;
   }
 
   .nav-center {
     width: 100%;
+
     @include breakpoint-md-up {
       max-width: $breakpoint-lg;
       display: flex;
@@ -22,6 +24,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
+
     @include breakpoint-md-up {
       padding: 0;
     }
@@ -30,6 +33,7 @@
   .nav-toggle {
     @include borderless-button;
     font-size: 1.5rem;
+
     @include breakpoint-md-up {
       display: none;
     }
