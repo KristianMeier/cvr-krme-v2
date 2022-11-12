@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { FaBars } from 'react-icons/fa'
+import { ThemeProvider } from '../../../Context/ThemeContext'
 import { NavbarLinks } from './NavbarLinks'
 
 export const Navbar = () => {
@@ -28,10 +29,12 @@ export const Navbar = () => {
             <FaBars />
           </button>
         </div>
-        <NavbarLinks
-          linksContainerRef={linksContainerRef}
-          linksRef={linksRef}
-        />
+        <ThemeProvider>
+          <NavbarLinks
+            linksContainerRef={linksContainerRef}
+            linksRef={linksRef}
+          />
+        </ThemeProvider>
       </div>
     </nav>
   )

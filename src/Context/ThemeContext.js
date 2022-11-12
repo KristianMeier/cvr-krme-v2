@@ -1,53 +1,44 @@
-import { useState, useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { createContext } from 'react'
 import {
-  AUTH_LOCAL_STORAGE_KEY,
-  LOG_OUT_LOCAL_STORAGE_VALUE,
+  DARK_THEME,
+  LIGHT_THEME,
+  THEME_LOCAL_STORAGE_KEY,
 } from '../Constants/Constants'
 import { getLocalStorage } from '../Utilities/getLocalStorage'
 
-const AppContext = createContext()
+const ThemeContext = createContext()
 
-export const ThemeContext = ({ children }) => {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [login, setLogin] = useState(
-    getLocalStorage(AUTH_LOCAL_STORAGE_KEY, LOG_OUT_LOCAL_STORAGE_VALUE)
+export const ThemeProvider = ({ children }) => {
+  const [theme, setTheme] = useState(
+    getLocalStorage(THEME_LOCAL_STORAGE_KEY, LIGHT_THEME)
   )
 
-  const logOut = () => {
-    localStorage.setItem(AUTH_LOCAL_STORAGE_KEY, LOG_OUT_LOCAL_STORAGE_VALUE)
-    setLogin(LOG_OUT_LOCAL_STORAGE_VALUE)
+  const toggleTheme = () => {
+    if (theme === LIGHT_THEME) {
+      setTheme(DARK_THEME)
+    } else {
+      setTheme(LIGHT_THEME)
+    }
   }
 
-  const logIn = (object) => {
-    const stringyfiedObject = JSON.stringify(object)
-    setLogin(stringyfiedObject)
-    localStorage.setItem(AUTH_LOCAL_STORAGE_KEY, stringyfiedObject)
-  }
-
-  const openModal = () => {
-    setIsModalOpen(true)
-  }
-  const closeModal = () => {
-    setIsModalOpen(false)
-  }
+  useEffect(() => {
+    document.documentElement.className = theme
+    localStorage.setItem(THEME_LOCAL_STORAGE_KEY, theme)
+  }, [theme])
 
   return (
-    <AppContext.Provider
+    <ThemeContext.Provider
       value={{
-        isModalOpen,
-        openModal,
-        closeModal,
-        login,
-        logIn,
-        logOut,
+        toggleTheme,
+        theme,
       }}
     >
       {children}
-    </AppContext.Provider>
+    </ThemeContext.Provider>
   )
 }
 
-export const useGlobalContext = () => {
-  return useContext(AppContext)
+export const useThemeContext = () => {
+  return useContext(ThemeContext)
 }
