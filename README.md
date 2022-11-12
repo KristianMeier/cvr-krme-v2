@@ -24,4 +24,4 @@
 
 # Choice of Architecture
 
-`I have used React with node-sass for the styling. This is done to mirror the technology choice in the project I will work on. As a "backend", I have used Local Storage. The choice of backend is made to save time, as I barely had time to learn intership-level React and CSS before the front-end internship start date. For the static content on the website, I have used one .js file with one object. `
+`I have used React with node-sass for the styling. This is done to mirror the technology choice in the project in my internship. As a "backend", I have used Local Storage. The choice of backend is made to save time, as I barely had time to learn intership-level React and CSS before the front-end internship start date. For the static content on the website, I have used one .js file with one object. `
