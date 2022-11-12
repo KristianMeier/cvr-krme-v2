@@ -3,6 +3,7 @@
 
   .virkopedia-container {
     @include flex-col-gap-1rem;
+
     @include breakpoint-md-up {
       flex-direction: row;
     }
@@ -12,9 +13,11 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
     @include breakpoint-md-up {
-      flex: 0 0 200px;
       flex-direction: column;
+      justify-content: flex-start;
+      flex: 0 0 200px;
     }
   }
 }

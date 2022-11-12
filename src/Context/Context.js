@@ -25,12 +25,8 @@ export const AppProvider = ({ children }) => {
     localStorage.setItem(AUTH_LOCAL_STORAGE_KEY, stringyfiedObject)
   }
 
-  const openModal = () => {
-    setIsModalOpen(true)
-  }
-  const closeModal = () => {
-    setIsModalOpen(false)
-  }
+  const openModal = () => setIsModalOpen(true)
+  const closeModal = () => setIsModalOpen(false)
 
   return (
     <AppContext.Provider
@@ -48,6 +44,4 @@ export const AppProvider = ({ children }) => {
   )
 }
 
-export const useGlobalContext = () => {
-  return useContext(AppContext)
-}
+export const useGlobalContext = () => useContext(AppContext)

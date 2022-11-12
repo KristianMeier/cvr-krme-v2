@@ -5,15 +5,13 @@ import { Header } from './Header/Header'
 import { MainContainer } from './MainContainer/MainContainer'
 import { Navbar } from './Navbar/Navbar'
 
-export const Layout = () => {
-  return (
-    <DarkModeWrapper>
-      <Navbar />
-      <MainContainer>
-        <Header />
-        <Outlet />
-      </MainContainer>
-      <Footer />
-    </DarkModeWrapper>
-  )
-}
+export const Layout = () => (
+  <DarkModeWrapper>
+    <Navbar />
+    <MainContainer>
+      <Header />
+      <Outlet />
+    </MainContainer>
+    <Footer />
+  </DarkModeWrapper>
+)

@@ -1,3 +1,3 @@
-export const PlaceholderWrapper = ({ children }) => {
-  return <div className='placeholder-wrapper'>{children} </div>
-}
+export const PlaceholderWrapper = ({ children }) => (
+  <div className='placeholder-wrapper'>{children} </div>
+)

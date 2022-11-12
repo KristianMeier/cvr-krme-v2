@@ -10,16 +10,16 @@ export const Company = () => {
   const tableData = JsData.searchData.companies[arrayIndex]
   const companyinfoData = JsData.searchData.companyinfoTitles
 
-  if (!tableData) return <h1>No companies found...</h1>
-
-  return (
+  return !tableData ? (
+    <h1>No companies found...</h1>
+  ) : (
     <section className='company-page'>
       <h1> {tableData.companyName} </h1>
       <CompanyTable company={tableData} />
       <div className='all-companies-info'>
-        {companyinfoData.map((item) => {
-          return <CompanyInfo key={item} title={item} info={JsData.lorem} />
-        })}
+        {companyinfoData.map((item) => (
+          <CompanyInfo key={item} title={item} info={JsData.lorem} />
+        ))}
       </div>
     </section>
   )

@@ -10,23 +10,17 @@ const placeholderWrapperData = [
   JsData.placeholderData.rowThree,
 ]
 
-export const LandingPage = () => {
-  return (
-    <>
-      <Search />
-      {placeholderWrapperData.map((item) => {
-        return (
-          <PlaceholderWrapper key={item}>
-            {item.map((item) => {
-              const { className, title } = item
-              return (
-                <Placeholder key={title} className={className} title={title} />
-              )
-            })}
-          </PlaceholderWrapper>
-        )
-      })}
-      <Modal title='You have signed out' />
-    </>
-  )
-}
+export const LandingPage = () => (
+  <>
+    <Search />
+    {placeholderWrapperData.map((item) => (
+      <PlaceholderWrapper key={item}>
+        {item.map((item) => {
+          const { className, title } = item
+          return <Placeholder key={title} className={className} title={title} />
+        })}
+      </PlaceholderWrapper>
+    ))}
+    <Modal title='You have signed out' />
+  </>
+)

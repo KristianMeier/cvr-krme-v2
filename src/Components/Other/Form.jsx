@@ -14,28 +14,26 @@ export const Form = ({
   onChangeTwo,
   onClick,
   btnTitle,
-}) => {
-  return (
-    <form className='form-container'>
-      <div className='form-control'>
-        <InputField
-          type={typeOne}
-          idName={idNameOne}
-          placeholder={placeholderOne}
-          value={valueOne}
-          onChange={onChangeOne}
-        />
-        <InputField
-          type={typeTwo}
-          idName={idNameTwo}
-          placeholder={placeholderTwo}
-          value={valueTwo}
-          onChange={onChangeTwo}
-        />
-        <button type='submit' onClick={onClick}>
-          {btnTitle}
-        </button>
-      </div>
-    </form>
-  )
-}
+}) => (
+  <form className='form-container'>
+    <div className='form-control'>
+      <InputField
+        type={typeOne}
+        idName={idNameOne}
+        placeholder={placeholderOne}
+        value={valueOne}
+        onChange={onChangeOne}
+      />
+      <InputField
+        type={typeTwo}
+        idName={idNameTwo}
+        placeholder={placeholderTwo}
+        value={valueTwo}
+        onChange={onChangeTwo}
+      />
+      <button type='submit' onClick={onClick}>
+        {btnTitle}
+      </button>
+    </div>
+  </form>
+)

@@ -40,9 +40,7 @@ export const Search = () => {
     setNPages(filteredPageNumbers)
   }, [page, searchField])
 
-  const handleChange = (e) => {
-    setSearchField(e.target.value)
-  }
+  const handleChange = (e) => setSearchField(e.target.value)
 
   return (
     <div className='search'>
@@ -60,9 +58,9 @@ export const Search = () => {
         {noOfReturnedCompanies === 0 ? (
           <h1>No companies found</h1>
         ) : (
-          companies.map((company) => {
-            return <SearchCompany key={company.arrayIndex} company={company} />
-          })
+          companies.map((company) => (
+            <SearchCompany key={company.arrayIndex} company={company} />
+          ))
         )}
         <SearchPagination pageNumbers={pageNumbers} setPage={setPage} />
       </section>

@@ -24,13 +24,8 @@ export const SignInPage = () => {
     setPassword('')
   }
 
-  const onChangeName = (e) => {
-    setName(e.target.value)
-  }
-
-  const onChangePassword = (e) => {
-    setPassword(e.target.value)
-  }
+  const onChangeName = (e) => setName(e.target.value)
+  const onChangePassword = (e) => setPassword(e.target.value)
 
   return (
     <div className='sign-in-page'>

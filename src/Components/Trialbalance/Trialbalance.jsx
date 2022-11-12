@@ -34,7 +34,7 @@ export const Trialbalance = () => {
       />
       <TrialbalanceArticle data={data} />
       <p>
-        <i>Hint: Click to copy to clipboard</i>
+        <i>Hint: Click an article to copy to clipboard</i>
       </p>
       <Modal title='Copied to clipboard' />
     </div>

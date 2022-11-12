@@ -25,28 +25,29 @@ export const AddEmployees = () => {
       name,
       title,
     }
+
     setEmployees([...employees, newEmployee])
     setName('')
     setTitle('')
   }
 
-  const removeEmployee = (localStorageId) => {
+  const removeEmployee = (localStorageId) =>
     setEmployees(
       employees.filter((item) => item.localStorageId !== localStorageId)
     )
-  }
 
-  useEffect(() => {
-    localStorage.setItem(EMPLOYEE_LOCAL_STORAGE_KEY, JSON.stringify(employees))
-  }, [employees])
+  useEffect(
+    () =>
+      localStorage.setItem(
+        EMPLOYEE_LOCAL_STORAGE_KEY,
+        JSON.stringify(employees)
+      ),
+    [employees]
+  )
 
-  const onChangeName = (e) => {
-    setName(e.target.value)
-  }
+  const onChangeName = (e) => setName(e.target.value)
 
-  const onChangeTitle = (e) => {
-    setTitle(e.target.value)
-  }
+  const onChangeTitle = (e) => setTitle(e.target.value)
 
   return (
     <div className='add-employess'>

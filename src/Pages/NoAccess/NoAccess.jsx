@@ -8,9 +8,7 @@ export const NoAccess = () => {
   return (
     <Account
       title='You need to sign in to acces your account'
-      onClick={() => {
-        navigate(SIGN_IN_PAGE_PATH)
-      }}
+      onClick={() => navigate(SIGN_IN_PAGE_PATH)}
       btnTitle='Sign In'
     />
   )

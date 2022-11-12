@@ -1,7 +1,2 @@
-export const getLocalStorage = (key, valueIfEmpty) => {
-  if (localStorage.getItem(key)) {
-    return localStorage.getItem(key)
-  } else {
-    return valueIfEmpty
-  }
-}
+export const getLocalStorage = (key, valueIfEmpty) =>
+  localStorage.getItem(key) ? localStorage.getItem(key) : valueIfEmpty
